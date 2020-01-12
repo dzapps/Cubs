@@ -1,11 +1,17 @@
 function applause() {
-    var myAudio = new Audio;
+    let myAudio = new Audio;
     myAudio.src = "audio/applause.wav";
     myAudio.play();
 }
+
+function showCorrect(pic) {
+    document.getElementById(pic).classList.add("right-picture");
+}
     
     
-    $("#accordion").accordion();
+    $("#accordion").accordion({
+        heightStyle: "content"
+    });
     
     $(".kids").draggable();
         
@@ -13,7 +19,8 @@ function applause() {
      $("#dog").droppable({
         accept: "#puppy", 
         drop: function( event, ui ) {
-            applause();
+            // applause();
+            showCorrect("dog");
         }
     })
     
@@ -177,7 +184,9 @@ function applause() {
     $("#lynxPic").droppable({
         accept: "#lynx", 
         drop: function( event, ui ) {
-            applause();
+            // applause();
+            showCorrect("lynxPic");
+           
         }
     })
     
